@@ -1,0 +1,19 @@
+{
+  "name": "une-comparaison-front",
+  "version": "1.0.0",
+  "description": "My majestic Nuxt.js project",
+  "author": "barraud-samuel",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "moment": "^2.25.3",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {}
+}
