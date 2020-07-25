@@ -7,7 +7,7 @@ export const getters= {
   blueCars: state => (arg)=> {
     return state.releases.filter(release => release.journal.name === arg)
   }
-} 
+}
 
 export const mutations = {
   SET_RELEASES(state,value){
@@ -25,7 +25,8 @@ export const actions = {
       commit('SET_RELEASES',res.data)
     })
     .catch((err) => {
-      throw err;
+      //throw err;
+      console.log(err)
     });
   }
 }

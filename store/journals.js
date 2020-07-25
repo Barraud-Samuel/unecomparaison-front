@@ -15,15 +15,16 @@ export const mutations = {
 export const actions = {
   async fetchJournals({commit}){
     console.log('journal');
-    
+
     await this.$axios.get('/journals')
     .then((res)=>{
       console.log(res);
-      
+
       commit('SET_JOURNALS',res.data)
     })
     .catch((err)=>{
-      throw err;
+      //throw err;
+      console.log(err)
     })
   }
 }
