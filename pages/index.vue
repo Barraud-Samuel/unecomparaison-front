@@ -56,6 +56,7 @@ export default {
       return moment.unix(timestamp).format("YYYY-MM-DD HH:mm");
     },
     infiniteScroll($state){
+      console.log("flmsqkdjfdqmlfjkf")
       setTimeout(() => {
         if (this.currentPage <= this.TotalPages){
           this.$store.dispatch('releases/fetchNextPagesReleases', this.currentPage).then(()=>{
