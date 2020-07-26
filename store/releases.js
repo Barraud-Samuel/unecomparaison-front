@@ -11,10 +11,12 @@ export const getters= {
 
 export const mutations = {
   SET_RELEASES(state,value){
-    console.log(value);
-    console.log("----------------");
     state.releases = value
     console.log(state.releases);
+  },
+  ADD_RELEASES(state,value){
+    state.releases.releases.push(...value.releases)
+    state.releases.currentPage = value.currentPage
   }
 }
 
@@ -25,8 +27,18 @@ export const actions = {
       commit('SET_RELEASES',res.data)
     })
     .catch((err) => {
-      //throw err;
+      throw err;
       console.log(err)
     });
+  },
+  async fetchNextPagesReleases({commit},page){
+    await this.$axios.get('/releases?page='+page)
+      .then((res)=>{
+        commit('ADD_RELEASES',res.data)
+      })
+      .catch((err) => {
+        throw err;
+        console.log(err)
+      });
   }
 }

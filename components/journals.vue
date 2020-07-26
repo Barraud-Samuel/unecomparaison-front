@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-4" v-for="journal in journals" :key="journal.id">
-        <p class="text-center">{{journal.name}}</p>
+        <p class="text-center font-weight-bold"><u>{{journal.name}}</u></p>
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@ export default {
   methods:{
     async fetchJournals(){
       await this.$store.dispatch('journals/fetchJournals');
-      
+
     }
   },
   mounted(){
@@ -28,8 +28,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
 .row{
   width: 100%;
 }
+  p{
+    font-size: 22px;
+  }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-dark bg-primary">
+  <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand mx-auto" href="#">
       Une comparaison
     </a>
@@ -12,6 +12,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.navbar-brand{
+  font-size: 24px;
+  text-transform: uppercase;
+}
 </style>
