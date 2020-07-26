@@ -17,10 +17,12 @@
         </div>
       </div>
     </section>
+    <no-ssr>
     <infinite-loading
       spinner="spiral"
       @infinite="infiniteScroll"
     ></infinite-loading>
+      </no-ssr>
   </div>
 </template>
 
