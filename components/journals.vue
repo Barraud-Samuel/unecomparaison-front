@@ -18,8 +18,11 @@ export default {
   },
   methods:{
     async fetchJournals(){
-      await this.$store.dispatch('journals/fetchJournals');
-
+      try {
+        await this.$store.dispatch('journals/fetchJournals');
+      } catch (err) {
+        return this.$nuxt.error({ statusCode: err.response.status, message: err.message })
+      }
     }
   },
   mounted(){

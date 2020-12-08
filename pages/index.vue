@@ -38,7 +38,11 @@ export default {
     Journals
   },
   async fetch({store,error}){
-    await store.dispatch('releases/fetchReleases');
+    try {
+      await store.dispatch('releases/fetchReleases');
+    } catch (err) {
+      return error({ statusCode: err.response.status, message: err.message })
+    }
   },
   computed: {
     ...mapState('releases', ['releases']),
